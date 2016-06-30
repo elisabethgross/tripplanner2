@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:production": "node ~/Desktop/GraceHopper/tripplanner2/app.js",
+    "start:dev": "nodemon -e html,css,js ~/Desktop/GraceHopper/tripplanner2/app.js",
+    "start": "npm run start:dev"
   },
   "author": "",
   "license": "ISC",

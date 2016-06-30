@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 // swig templating boilerplate setup
 app.engine('html', swig.renderFile); // how to render html templates
 app.set('view engine', 'html'); // what file extension do our templates have
-app.set('views', path.join(__dirname, './views')); // where to find the views
+app.set('views', __dirname + '/views'); // where to find the views
 swig.setDefaults({ cache: false });
 
 // body parsing middleware
@@ -17,6 +17,7 @@ app.use(bodyParser.json()); // would be for AJAX requests
 
 app.use(express.static(__dirname + './public'));
 
+app.use('/', require('./routes'));
 
 // CATCH 404 AND FORWARD TO ERROR HANDLER
 app.use(function(req, res, next) {
